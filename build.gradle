@@ -20,7 +20,6 @@ repositories {
 		name = "Ladysnake"
 		url = "https://maven.ladysnake.org/releases"
 	}
-	maven { url 'https://masa.dy.fi/maven' }
 	maven {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
@@ -37,16 +36,17 @@ repositories {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "org.quiltmc:quilt-mappings:${project.minecraft_version}+build.${project.quilt_mappings}:intermediary-v2"
+	mappings "net.fabricmc:yarn:${project.minecraft_version}+build.${project.yarn_version}:v2"
+
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation include("io.github.ladysnake:satin:${project.satin_version}")
+	modCompileOnly include("io.github.ladysnake:satin:${project.satin_version}")
 	modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_version}-fabric")
 	modCompileOnly ("dev.emi:emi-fabric:${project.emi_version}:api")
-	modLocalRuntime ("dev.emi:emi-fabric:${project.emi_version}")
+//	modLocalRuntime ("dev.emi:emi-fabric:${project.emi_version}")
 
-	modImplementation "maven.modrinth:sodium:${project.sodium_version}"
+	modCompileOnly "maven.modrinth:sodium:${project.sodium_version}"
 }
 
 processResources {

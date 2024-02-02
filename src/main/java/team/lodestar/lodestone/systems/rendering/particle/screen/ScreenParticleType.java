@@ -1,11 +1,12 @@
 package team.lodestar.lodestone.systems.rendering.particle.screen;
 
-import team.lodestar.lodestone.systems.rendering.particle.screen.base.ScreenParticle;
 import net.minecraft.world.World;
+import team.lodestar.lodestone.systems.rendering.particle.screen.base.ScreenParticle;
 
 public class ScreenParticleType<T extends ScreenParticleEffect> {
 
     public Factory<T> factory;
+
     public ScreenParticleType() {
     }
 

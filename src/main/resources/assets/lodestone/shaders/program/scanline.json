@@ -6,15 +6,46 @@
   },
   "vertex": "sobel",
   "fragment": "fufo:scanline",
-  "attributes": [ "Position" ],
+  "attributes": [
+    "Position"
+  ],
   "samplers": [
-    { "name": "Sampler0" }
+    {
+      "name": "Sampler0"
+    }
   ],
   "uniforms": [
-    { "name":  "density", "type": "float", "count": 1,  "values":  [1.3] },
-    { "name": "opacityLine", "type": "float", "count": 1, "values": [3] },
-    { "name": "opacityNoise", "type": "float", "count": 1, "values": [0.2] },
-    { "name": "flickering", "type": "float", "count": 1, "values": [0.03] }
+    {
+      "name": "density",
+      "type": "float",
+      "count": 1,
+      "values": [
+        1.3
+      ]
+    },
+    {
+      "name": "opacityLine",
+      "type": "float",
+      "count": 1,
+      "values": [
+        3
+      ]
+    },
+    {
+      "name": "opacityNoise",
+      "type": "float",
+      "count": 1,
+      "values": [
+        0.2
+      ]
+    },
+    {
+      "name": "flickering",
+      "type": "float",
+      "count": 1,
+      "values": [
+        0.03
+      ]
+    }
   ]
-
 }
