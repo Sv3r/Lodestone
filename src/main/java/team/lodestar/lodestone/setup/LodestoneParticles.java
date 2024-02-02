@@ -7,6 +7,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import team.lodestar.lodestone.helpers.DataHelper;
 import team.lodestar.lodestone.systems.rendering.particle.type.LodestoneParticleType;
+import team.lodestar.lodestone.systems.rendering.particle.type.LodestoneParticleType.Factory;
 import java.util.function.BiConsumer;
 
 public class LodestoneParticles {
@@ -21,11 +22,11 @@ public class LodestoneParticles {
     }
 
     public static void registerFactories() {
-        ParticleFactoryRegistry.getInstance().register(WISP_PARTICLE, LodestoneParticleType.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(SMOKE_PARTICLE, LodestoneParticleType.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(SPARKLE_PARTICLE, LodestoneParticleType.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(TWINKLE_PARTICLE, LodestoneParticleType.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(STAR_PARTICLE, LodestoneParticleType.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(WISP_PARTICLE, Factory::new);
+        ParticleFactoryRegistry.getInstance().register(SMOKE_PARTICLE, Factory::new);
+        ParticleFactoryRegistry.getInstance().register(SPARKLE_PARTICLE, Factory::new);
+        ParticleFactoryRegistry.getInstance().register(TWINKLE_PARTICLE, Factory::new);
+        ParticleFactoryRegistry.getInstance().register(STAR_PARTICLE, Factory::new);
     }
 
     // shamelessly stolen from Botania

@@ -11,10 +11,9 @@ import team.lodestar.lodestone.systems.rendering.particle.SimpleParticleEffect;
 import java.util.function.Consumer;
 
 public class WorldParticleEffect extends SimpleParticleEffect implements ParticleEffect {
+    public static final Factory<WorldParticleEffect> DESERIALIZER = (type, reader, registryLookup) -> new WorldParticleEffect(type);
 
-    public static final Factory<WorldParticleEffect> DESERIALIZER = (type, reader, registryLookup) -> new WorldParticleEffect(
-            type);
-    public final ParticleType<?> type;
+    public ParticleType<?> type;
     public ParticleTextureSheet textureSheet;
     public Consumer<GenericParticle> actor;
     public boolean noClip = false;
@@ -28,7 +27,7 @@ public class WorldParticleEffect extends SimpleParticleEffect implements Particl
     }
 
     public static PacketCodec<RegistryByteBuf, WorldParticleEffect> packetCodecFor(ParticleType<?> type) {
-        return PacketCodec.unit(new WorldParticleEffect(type));
+        return PacketCodec.of((effect, buf) -> {}, buf -> new WorldParticleEffect(type));
     }
 
     @Override

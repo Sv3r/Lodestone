@@ -28,7 +28,7 @@ public class LodestoneParticleType extends ParticleType<WorldParticleEffect> {
     }
 
     @Override
-    public PacketCodec<? super RegistryByteBuf, WorldParticleEffect> getPacketCodec() {
+    public PacketCodec<RegistryByteBuf, WorldParticleEffect> getPacketCodec() {
         return WorldParticleEffect.packetCodecFor(this);
     }
 
